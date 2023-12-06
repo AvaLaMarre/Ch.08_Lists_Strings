@@ -14,7 +14,7 @@ c_list = [5, 10, 13, 12, 5, 9, 2, 6, 1, 8, 8, 9, 11, 13, 14, 8, 2, 2, 6, 3, 9, 8
 list_total = 0
 for item in a_list:
     list_total += item
-list_total = list_total/item
+list_total = list_total / item
 print(list_total)
 
 '''
@@ -22,7 +22,7 @@ print(list_total)
 Write a program that will strip the username (whatever is in front of the @ symbol)
 from any e-mail address and print it. First ask the user for their e-mail address.
 '''
-email = input("What is your email address?")
+email = input("What is your email address? ")
 for letter in email:
     if letter == "@":
         break
@@ -41,10 +41,9 @@ TEXT FORMATTING:  (4pts)
      '''
 score = 41237
 highscore = 1023407
-print("Score:         " + f"{int(score):,}" )
-print("High score: " + f"{int(highscore):,}" )
 
-
+print(f"Score: {score:16,}")
+print(f"Score: {highscore:16,}")
 '''
 4.) MONTHS PROGRAM   (5pts)
 Write a user-input statement where a user enters a month number 1-12.
@@ -52,9 +51,14 @@ From the user input number, slice the string below in your program to print the 
 Keep repeating this until the user enters a non 1-12 number to quit.
 Once the user quits, print "Goodbye!"
 '''
-
+num = True
 months = "JanFebMarAprMayJunJulAugSepOctNovDec"
-
+while num:
+    monthsint = int(input("Type a month number 1-12: "))
+    print(months[monthsint * 3 - 3:monthsint * 3])
+    if monthsint > 12 or monthsint < 1:
+        num = False
+print("Goodbye!")
 
 '''
 5.) DECRYPTION PROGRAM   (5pts)
@@ -66,5 +70,15 @@ your program 40 times. Use a FOR loop from -20 to +20 to generate all the possib
 Extra Challenge: Instead of printing out 41 lines of text to look at, can you determine a way to just print out the decrypted line only
 along with the shift number?
 '''
+print("")
 Secret_Message = "Lxwp{j}~uj}rxw|*)bx~)l{jltnm)}qn)lxmn7)]qn)ox{ln)r|)\][XWP)r}q)x~*"
+var = -20
+for i in range(40):
+    for letter in Secret_Message:
+        message = ord(letter)
+        message += var
+        message = chr(message)
+        print(message, end="")
+    print("", var)
+    var += 1
 
