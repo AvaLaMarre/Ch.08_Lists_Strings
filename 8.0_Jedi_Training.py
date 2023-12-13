@@ -11,11 +11,12 @@ to add the numbers. Finish adding the numbers before you divide.
 a_list = [3, 12, 3, 5, 3, 4, 6, 8, 5, 3, 5, 6, 3, 2, 4]
 b_list = [4, 15, 2, 7, 8, 3, 1, 10, 9]
 c_list = [5, 10, 13, 12, 5, 9, 2, 6, 1, 8, 8, 9, 11, 13, 14, 8, 2, 2, 6, 3, 9, 8, 10]
-list_total = 0
-for item in a_list:
-    list_total += item
-list_total = list_total / item
-print(list_total)
+total = 0
+list= c_list
+for num in list:
+    total += num
+average = total / len(list)
+print(f" Your Average Is {average:.1f}")
 
 '''
 2.) USERNAME:  (3pts)
@@ -43,7 +44,7 @@ score = 41237
 highscore = 1023407
 
 print(f"Score: {score:16,}")
-print(f"Score: {highscore:16,}")
+print(f"High Score: {highscore:11,}")
 '''
 4.) MONTHS PROGRAM   (5pts)
 Write a user-input statement where a user enters a month number 1-12.
